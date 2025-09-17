@@ -4,8 +4,10 @@ name: First Workflow
 on:
  push:
   branches:
-   - develop
-
+   - master
+   - '! develop'
+  paths-ignore:
+   - '*.txt'
 jobs:
  build:
   runs-on: ubuntu-latest 
