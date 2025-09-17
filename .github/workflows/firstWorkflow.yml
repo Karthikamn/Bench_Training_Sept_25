@@ -2,12 +2,9 @@ name: First Workflow
 
 # triggers - events - push , pull_request , issue , workflow_dispatch , fork , pull_request_review , workflow_call,schedule
 on:
- push:
-  branches:
-   - master
-   - '! develop'
-  paths-ignore:
-   - '*.txt'
+ pull_request:
+   types:
+    - open
 jobs:
  build:
   runs-on: ubuntu-latest 
