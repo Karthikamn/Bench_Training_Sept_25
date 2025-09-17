@@ -2,8 +2,9 @@ name: First Workflow
 
 # triggers - events - push , pull_request , issue , workflow_dispatch , fork , pull_request_review , workflow_call,schedule
 on:
- workflow_dispatch
-
+ push:
+  branches:
+   - develop
 
 jobs:
  build:
