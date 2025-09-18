@@ -2,8 +2,8 @@ name: Demo Docker Build Action
 
 on:
   push:
-    branches: ["main"]
-
+    branches: master
+  workflow_dispatch:
 jobs:
   docker-build:
     runs-on: ubuntu-latest
