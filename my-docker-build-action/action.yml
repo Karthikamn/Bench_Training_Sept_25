@@ -1,0 +1,19 @@
+name: "Custom Docker Build Action"
+description: "A custom GitHub Action that runs docker build"
+author: "Your Name"
+
+inputs:
+  context:
+    description: "Build context (default: .)"
+    required: false
+    default: "."
+  tag:
+    description: "Docker image tag"
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.context }}
+    - ${{ inputs.tag }}
