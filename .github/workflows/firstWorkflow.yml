@@ -12,10 +12,10 @@ jobs:
    - name: Print 
      run: |
       echo "${{github.run_id}}"
-      echo "${{github.runner_number}}"
+      echo "${{github.run_number}}"
       echo "${{github.repository}}"
       echo "${{github.event_name}}"
-      echo "${{github.refs}}"
+      echo "${{github.ref}}"
 
 
  
