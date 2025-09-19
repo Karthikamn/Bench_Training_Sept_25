@@ -11,7 +11,7 @@ jobs:
   runs-on: ubuntu-latest 
   steps:
    - name: Print
-   - run: echo "${{vars.USERNAME}}"
+     run: echo "${{vars.USERNAME}}"
    - run: echo "${{secrets.PASSWORD}}"
 
 
