@@ -2,7 +2,7 @@ name: First Workflow
 
 # triggers - events - push , pull_request , issue , workflow_dispatch , fork , pull_request_review , workflow_call,schedule
 on:
- pull_request:
+ workflow_dispatch:
   
 
 jobs:
@@ -10,20 +10,7 @@ jobs:
   runs-on: ubuntu-latest 
   steps:
    - name: Print 
-     run: echo 'build'
+     run: echo "${{github.token}}"
 
- test:
-  needs: build
-  runs-on: windows-latest 
-  steps:
-    - name: Print 
-      run: echo 'test'
-
- deploy:
-   needs: [ build, test ]
-   runs-on: ubuntu-latest 
-   steps:
-      - name: Print 
-        run: echo "${{github.actor}}"
 
  
