@@ -3,19 +3,16 @@ name: First Workflow
 # triggers - events - push , pull_request , issue , workflow_dispatch , fork , pull_request_review , workflow_call,schedule
 on:
  workflow_dispatch:
-  
+env:
+  Username: "Karthika"
 
 jobs:
  build:
   runs-on: ubuntu-latest 
   steps:
-   - name: Print 
-     run: |
-      echo "${{github.run_id}}"
-      echo "${{github.run_number}}"
-      echo "${{github.repository}}"
-      echo "${{github.event_name}}"
-      echo "${{github.ref}}"
+   - name: Print
+   -  run: echo "${{vars.USERNAME}}"
+   -  run: echo "${{secrets.PASSWORD}}"
 
 
  
