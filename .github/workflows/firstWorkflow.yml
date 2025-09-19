@@ -24,6 +24,6 @@ jobs:
    runs-on: ubuntu-latest 
    steps:
       - name: Print 
-        run: echo 'deploy'
+        run: echo "${{github.actor}}"
 
  
