@@ -1,0 +1,14 @@
+name: input
+run-name: DEBUG | ${{inputs.DEBUG}}
+on:
+ workflow_dispatch:
+  inputs:
+   DEBUG: 
+    type: boolean
+    default: false
+jobs:
+ inputs_context:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Print
+     run: echo 'INPUT'
