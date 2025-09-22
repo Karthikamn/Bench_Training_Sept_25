@@ -6,9 +6,13 @@ on:
    DEBUG: 
     type: boolean
     default: false
+   environment_test:
+    type: environment
+    default: dev
 jobs:
  inputs_context:
   runs-on: ubuntu-latest
+  environment: ${{inputs.environment_test}}
   steps:
    - name: Print
      run: echo 'INPUT'
