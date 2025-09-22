@@ -10,15 +10,23 @@ jobs:
    matrix:
     include:
       - os: ubuntu-latest
+        java-version: 17
         index : 0
       - os: windows-latest
+        java-version: 20
         index : 1
-      - java-version: 17
-        index: 0
-      - java-version: 20
-        index: 1
-      - java-version: 26
+      - os: windows-latest
+        java-version: 26
         index: 2
+      - os: windows-latest
+        java-version: 17
+        index : 3
+      - os: ubuntu-latest
+        java-version: 20
+        index : 4
+      - os: ubuntu-latest
+        java-version: 26
+        index : 5
   steps:
    - name: Setup java 
      uses: actions/setup-java@v5.0.0
