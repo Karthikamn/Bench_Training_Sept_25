@@ -8,8 +8,17 @@ jobs:
   strategy:
    fail-fast: false
    matrix:
-    os: [ ubuntu-latest , windows-latest]
-    java-version: [17, 21, 26]
+    include:
+      - os: ubuntu-latest
+        index : 0
+      - os: windows-latest
+        index : 1
+      - java-version: 17
+        index: 0
+      - java-version: 20
+        index: 1
+      - java-version: 26
+        index: 2
   steps:
    - name: Setup java 
      uses: actions/setup-java@v5.0.0
