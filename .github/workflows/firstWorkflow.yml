@@ -11,21 +11,21 @@ jobs:
   environment: dev
   steps:
    - name: Print
-     run: echo '${{vars.user}}"
+     run: echo "${{vars.user}}"
  test:
   needs: build
   runs-on: ubuntu-latest
   environment: test
   steps:
    - name: Print
-     run: echo '${{vars.user}}"
+     run: echo "${{vars.user}}"
  staging:
   needs: [build,test]
   runs-on: ubuntu-latest
   environment: staging
   steps:
    - name: Print
-     run: echo '${{vars.user}}"
+     run: echo "${{vars.user}}"
 
 
  
