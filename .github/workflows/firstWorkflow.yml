@@ -3,16 +3,29 @@ name: First Workflow
 # triggers - events - push , pull_request , issue , workflow_dispatch , fork , pull_request_review , workflow_call,schedule
 on:
  workflow_dispatch:
-env:
-  Username: "Karthika"
+
 
 jobs:
  build:
-  runs-on: ubuntu-latest 
+  runs-on: ubuntu-latest
+  environment: dev
   steps:
    - name: Print
-     run: echo "${{vars.USERNAME}}"
-   - run: echo "${{secrets.PASSWORD}}"
+     run: echo '${{vars.user}}"
+ test:
+  needs: build
+  runs-on: ubuntu-latest
+  environment: test
+  steps:
+   - name: Print
+     run: echo '${{vars.user}}"
+ staging:
+  needs: [build,test]
+  runs-on: ubuntu-latest
+  environment: staging
+  steps:
+   - name: Print
+     run: echo '${{vars.user}}"
 
 
  
