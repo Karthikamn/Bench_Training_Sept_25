@@ -11,7 +11,7 @@ on:
     default: dev
 jobs:
  inputs_context:
-  runs-on: ubuntu-latest
+  runs-on: self-hosted
   environment: ${{inputs.environment_test}}
   steps:
    - name: Print
