@@ -23,7 +23,8 @@ jobs:
       echo  "SHA value is ${{github.sha}}"
       echo " Env value is ${{env.MY_VAR}}"
    - name: Print
-     run: echo "Env value is ${{env.MY_VAR}}"
-      
+     run: |
+      echo "Env value is ${{env.MY_VAR}}"
+      echo "Vars is ${{vars.MY_VAR}}"
      
       
