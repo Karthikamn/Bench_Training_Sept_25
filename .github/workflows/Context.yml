@@ -25,6 +25,6 @@ jobs:
    - name: Print
      run: |
       echo "Env value is ${{env.MY_VAR}}"
-      echo "Vars is ${{vars.MY_VAR}}"
+      echo "Secret is ${{secrets.PASSWORD_API}}"
      
       
