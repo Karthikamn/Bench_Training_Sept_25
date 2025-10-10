@@ -12,30 +12,9 @@ on:
 jobs:
  build:
   runs-on: ubuntu-latest
-  environment: dev
+  environment: ${{inputs.TARGET_ENV}}
   steps:
    - name: Print
      run: echo "${{vars.user}}"
- test:
-  needs: build
-  runs-on: ubuntu-latest
-  environment: test
-  steps:
-   - name: Print
-     run: echo "${{vars.user}}"
- staging:
-  needs: [ build,test]
-  runs-on: ubuntu-latest
-  environment: staging
-  steps:
-   - name: Print
-     run: echo "${{vars.user}}"
- prod:
-  needs: [build,test,staging]
-  runs-on: ubuntu-latest
-  environment: prod
-  steps:
-   - name: Print 
-     run: echo " ${{vars.TARGET_VAR}}"
 
  
