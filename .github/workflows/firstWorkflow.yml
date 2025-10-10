@@ -20,12 +20,18 @@ jobs:
    - name: Print
      run: echo "${{vars.user}}"
  staging:
-  needs: [build,test]
+  needs: [ build,test]
   runs-on: ubuntu-latest
   environment: staging
   steps:
    - name: Print
      run: echo "${{vars.user}}"
-
+ prod:
+  needs: [build,test,staging]
+  runs-on: ubuntu-latest
+  environment: prod
+  steps:
+   - name: Print 
+     run: echo " ${{vars.TARGET_VAR}}"
 
  
