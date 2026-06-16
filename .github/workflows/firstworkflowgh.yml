@@ -1,0 +1,30 @@
+name: Workflow
+on:
+   push
+
+jobs: 
+ build:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Setup Java
+         uses: actions/setup-java@v5.2.0
+         with:
+          java-version: '17'
+          distribution: 'microsoft'
+       - name: Check Java
+         run: java --version 
+ test:
+    runs-on:  windows-latest
+    needs: build
+    steps:
+       - name: Print
+         run: echo "test"
+         
+ deploy:
+    runs-on:  ubuntu-latest
+    needs: [build , test ]
+    steps:
+       - name: Print
+         run: echo "deploy"
+         
+ 
